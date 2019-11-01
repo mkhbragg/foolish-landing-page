@@ -1,18 +1,14 @@
-{% load static %}
-
+{% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="{% static 'js/tracker.js' %}"></script>
-</head>
-<body>
-
-
-    {%  include "partials/_disclosure.html" %}
-    <footer>
-        <p class="text-center">&copy;1995-{% now 'Y' %} The Motley Fool. All rights reserved. | <a href="https://www.fool.com/help/FoolMarks.htm" onclick="bNoPop=true" target="_blank">Legal Information</a></p>
-    </footer>
+    <title>Django React Webpack</title>
+    <!-- Webpack rendered CSS -->
+    {% render_bundle 'main' 'css' %}
+</head><body>
+    <div id="react-app"></div>
+    <!-- Webpack rendered JS -->
+    {% render_bundle 'main' 'js' %}
 </body>
 </html>
