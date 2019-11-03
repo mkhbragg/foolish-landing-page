@@ -1,0 +1,21 @@
+.RecommendationCard {
+    width: 16rem;
+    height: 8rem;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+       -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+            box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);    
+
+    .FlexColumn {
+        display: flex;
+        flex-direction: column;
+    }         
+    
+    .FlexRow {
+        display: flex;
+    }
+
+    .TopBar {
+        height: 8px;
+        width: 100%;
+    }
+}

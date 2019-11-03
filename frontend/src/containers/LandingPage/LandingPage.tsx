@@ -36,7 +36,7 @@ class LandingPage extends Component<any, any> {
         console.log(this.state.topPerformers);
         let topRecommendations;
         if (this.state.topPerformers) {
-            topRecommendations = this.state.topPerformers.map((rec: Recommendation) => <RecommendationCard key={rec.id} recommendation={rec} />);
+            topRecommendations = this.state.topPerformers.map((rec: Recommendation, i: number) => <RecommendationCard key={rec.id} recommendation={rec} id={i} />);
         }
         
         return (
