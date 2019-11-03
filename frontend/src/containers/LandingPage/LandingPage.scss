@@ -1,0 +1,22 @@
+@import '../../assets/sass/theme.scss';
+
+.LandingPage {
+    padding: 2rem 4rem;
+
+    .RecommendationCards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include media ("<=tablet") {
+        & {
+            padding: 2rem;
+        }
+    }
+
+    @include media ("<=phone") {
+        & {
+            padding: 1rem;
+        }
+    }
+}

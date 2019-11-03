@@ -1,28 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 import Tick from '../Tick/Tick';
 import './RecommendationCard.scss';
 
 const COLORS = ['#3F1B54', '#FFCC32', '#336699', '#CC3300', '#339932'];
 
-const recommendationCard = (props: any) => {
-    return (
-        <div className="RecommendationCard">
-            <div className="TopBar" style={{ backgroundColor: COLORS[props.id%COLORS.length] }}></div>
-            <div className="FlexRow">
-                <div className="FlexColumn">
-                    <span>StockAdvisor</span>
-                    <Tick amount={props.recommendation.stockAdvisorReturn} />
-                </div>
-                <div className="FlexColumn">
-                    {/* TODO: replace with dynamic benchmark value */}
-                    <span>S&amp;P 500</span>
-                    <Tick amount={props.recommendation.benchmarkReturn} />
+class RecommendationCard extends Component<any, any> {
+    state = {
+        imgSrc: `https://g.foolcdn.com/art/companylogos/mark/${this.props.recommendation.symbol}.png`,
+        imgNotFound: false
+    }
+
+    componentDidMount() {
+        axios(this.state.imgSrc)
+            .catch((error) => this.setState({ imgNotFound: true }));
+    }
+
+    render() {
+        return (
+            <div className="RecommendationCard">
+                <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div>
+                <div className="Content">
+                    <div className="FlexRow Ticks">
+                        <div className="FlexColumn">
+                            <span>StockAdvisor</span>
+                            <Tick amount={this.props.recommendation.stockAdvisorReturn} />
+                        </div>
+                        <div className="FlexColumn">
+                            {/* TODO: replace with dynamic benchmark value */}
+                            <span>S&amp;P 500</span>
+                            <Tick amount={this.props.recommendation.benchmarkReturn} />
+                        </div>
+                    </div>
+                    <div className="FlexRow Company">
+                        <div className="FlexColumn Logo" title={this.props.recommendation.company}>
+                            { !this.state.imgNotFound ? <img width="48px" src={this.state.imgSrc} alt={`${this.props.recommendation.company} Logo`} /> : null }
+                            <span className="Symbol">{ this.props.recommendation.symbol }</span>
+                        </div>
+                        <span>{ this.props.recommendation.company }</span>
+                    </div>
                 </div>
             </div>
-            <div>{ props.recommendation.company }</div>
-        </div>
-    );
+        );
+    }
 }
 
-export default recommendationCard;
+export default RecommendationCard;
