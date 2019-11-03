@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const footer = () => {
-    return (
-        <div></div>
-    )
+import axios from '../../axios-tmf';
+
+class Footer extends Component<any, any> {
+    componentDidMount() {
+        axios('/disclosure')
+            .then((response: any) => {
+                console.log(response);
+                this.setState({ disclosure: response.data });
+            });
+    }
+
+    render() {
+        return (
+            <div></div>
+        )
+    }
 }
 
-export default footer;
+export default Footer;

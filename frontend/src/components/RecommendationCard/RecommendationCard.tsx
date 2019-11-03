@@ -20,8 +20,10 @@ class RecommendationCard extends Component<any, any> {
     render() {
         return (
             <div className="RecommendationCard">
-                <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div>
+                {/* <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div> */}
+                <div className="TopBar"></div>
                 <div className="Content">
+                    <span className="Rank">{ this.props.rank }</span>
                     <div className="FlexRow Ticks">
                         <div className="FlexColumn">
                             <span>StockAdvisor</span>
@@ -38,7 +40,7 @@ class RecommendationCard extends Component<any, any> {
                             { !this.state.imgNotFound ? <img width="48px" src={this.state.imgSrc} alt={`${this.props.recommendation.company} Logo`} /> : null }
                             <span className="Symbol">{ this.props.recommendation.symbol }</span>
                         </div>
-                        <span>{ this.props.recommendation.company }</span>
+                        {/* <span>{ this.props.recommendation.company }</span> */}
                     </div>
                 </div>
             </div>

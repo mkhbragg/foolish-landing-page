@@ -21,13 +21,26 @@
         justify-content: space-between;
     }
 
+    .Rank {
+        position: absolute;
+        font-weight: 900;
+        font-size: 2rem;
+    }
+
     .Ticks {
         justify-content: space-around;
+        margin-left: 2rem;
+        margin-top: 1rem;
+
+        .FlexColumn span {
+            font-weight: 300;
+        }
     }
 
     .TopBar {
         height: 8px;
         width: 100%;
+        background-color: $motleyPurple;
     }
 
     .Symbol {
@@ -40,7 +53,7 @@
     }
 
     .Company {
-        align-items: baseline;
+        justify-content: center;
     }
 
     .Content {
