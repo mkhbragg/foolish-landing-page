@@ -32,15 +32,25 @@ settings.configure(
     STATIC_ROOT = PROJECT_PATH + '/static/',
     STATIC_URL='/static/',
     INSTALLED_APPS = [
-        'webpack_loader'
+       'corsheaders'
     ],
-    WEBPACK_LOADER = {
-        'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'dist/',
-            'STATS_FILE': os.path.join(PROJECT_PATH, 'webpack-stats.json'),
-        }
-    }
+    MIDDLEWARE = [
+        'corsheaders.middleware.CorsMiddleware'
+    ],
+    # WEBPACK_LOADER = {
+    #     'DEFAULT': {
+    #         'BUNDLE_DIR_NAME': 'dist/',
+    #         'STATS_FILE': os.path.join(PROJECT_PATH, 'webpack-stats.json'),
+    #     }
+    # },
+    CORS_ORIGIN_WHITELIST = (
+        'http://localhost:3000',
+        'http://localhost:8000'
+    )
 )
+
+# router = routers.DefaultRouter()                      # add this
+#     router.register(r'todos', views.TodoView, 'todo')  
 
 # def compareBenchmarks(stock):
 #     if stock['return_vs_benchmark']
