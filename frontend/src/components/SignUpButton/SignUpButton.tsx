@@ -47,7 +47,7 @@ class SignUpButton extends Component<any, any> {
             <div className="SignUpButton">
                 <form onSubmit={ this.handleSubmit }>
                     <input type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
-                    <input type="submit" value="Sign me up!" />
+                    <input type="submit" value="Go" />
                 </form>
             </div>
         );

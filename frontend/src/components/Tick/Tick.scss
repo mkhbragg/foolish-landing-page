@@ -5,9 +5,9 @@
     .arrow {
         width: 0; 
         height: 0; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid $motleyGreen;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid $motleyGreen;
         margin-right: 0.5rem;
         }
 }
@@ -17,9 +17,9 @@
     .arrow {
         width: 0; 
         height: 0; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid $motleyRed;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid $motleyRed;
         margin-right: 0.5rem;
         }
 }
@@ -29,7 +29,7 @@
     .arrow {
         width: 0.5rem; 
         height: 0;
-        border-top: 5px solid #000;
+        border-top: 7px solid #000;
         margin-right: 0.5rem;
         }
 }
@@ -37,4 +37,6 @@
 .up, .down, .none {
     display: flex;
     align-items: center;
+    font-weight: 900;
+    font-size: 1.5rem;
 }

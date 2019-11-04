@@ -1,5 +1,14 @@
 @import '../../assets/sass/theme.scss';
 
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 6rem;
+    width: 100%;
+}
+
 .Sprite {
     background: url('https://g.foolcdn.com/misc-assets/foolcom-logos-27092019.png') no-repeat -1px -1240px;
 	width: 325px;
@@ -39,6 +48,10 @@
             margin-top: 0;
             font-size: 4rem;
         }
+
+        input[type=email] {
+            margin: 1rem 0;
+        }
     }
 
     .RecommendationCards {
@@ -49,7 +62,7 @@
 
     .ShowMore {
         width: 20rem;
-        height: 10rem;
+        height: 11rem;
         background-color: #fff;
         display: flex;
 

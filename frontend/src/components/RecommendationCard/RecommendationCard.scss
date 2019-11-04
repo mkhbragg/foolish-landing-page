@@ -18,7 +18,7 @@
 
 .RecommendationCard {
     width: 20rem;
-    height: 10rem;
+    height: 11rem;
     margin-bottom: 1rem;
     margin-right: 1rem;
     font-family: "Helvetica Neue", sans-serif;
@@ -37,8 +37,6 @@
         justify-content: space-around;
 
         .FlexColumn span {
-            font-weight: 300;
-
             &.TickType {
                 font-weight: 600;
             }

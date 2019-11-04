@@ -73,7 +73,10 @@ class LandingPage extends Component<any, any> {
         
         return (
             <Aux>
-                <div className="Sprite"></div>
+                <div className="Header">
+                    <div className="Sprite"></div>
+                    <SignUpButton />
+                </div>
                 <div className="LandingPage">
                     <div className="PurpleChunk">
                         <h1>Stock Advisor</h1>
@@ -129,8 +132,9 @@ class LandingPage extends Component<any, any> {
                         Think about how many investing trends you've missed out on even though you knew they were going to be big.
                         Don't let that happen again. This is your chance to get in early.
                         I urge you to take action today and decide for yourself if you want to take advantage of this potentially once-in-a-generation buying opportunity. Simply enter your email address below to access our secure sign-up page.
+                    
+                        <SignUpButton />
                     </div>
-                    <SignUpButton />
                 </div>
             </Aux>
         );
