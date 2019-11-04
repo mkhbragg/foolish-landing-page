@@ -13,34 +13,30 @@ class RecommendationCard extends Component<any, any> {
     }
 
     componentDidMount() {
-        axios(this.state.imgSrc)
+        axios.get(this.state.imgSrc)
             .catch((error) => this.setState({ imgNotFound: true }));
     }
 
     render() {
         return (
             <div className="RecommendationCard">
-                {/* <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div> */}
-                <div className="TopBar"></div>
+                <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div>
                 <div className="Content">
-                    <span className="Rank">{ this.props.rank }</span>
                     <div className="FlexRow Ticks">
                         <div className="FlexColumn">
-                            <span>StockAdvisor</span>
+                            <span className="TickType">StockAdvisor</span>
                             <Tick amount={this.props.recommendation.stockAdvisorReturn} />
                         </div>
                         <div className="FlexColumn">
-                            {/* TODO: replace with dynamic benchmark value */}
-                            <span>S&amp;P 500</span>
+                            <span className="TickType">S&amp;P 500</span>
                             <Tick amount={this.props.recommendation.benchmarkReturn} />
                         </div>
                     </div>
                     <div className="FlexRow Company">
                         <div className="FlexColumn Logo" title={this.props.recommendation.company}>
-                            { !this.state.imgNotFound ? <img width="48px" src={this.state.imgSrc} alt={`${this.props.recommendation.company} Logo`} /> : null }
+                            { this.state.imgNotFound ? <span className="Name">{ this.props.recommendation.company }</span> : <img width="48px" src={this.state.imgSrc} alt={this.props.recommendation.company} />  }
                             <span className="Symbol">{ this.props.recommendation.symbol }</span>
                         </div>
-                        {/* <span>{ this.props.recommendation.company }</span> */}
                     </div>
                 </div>
             </div>

@@ -49,37 +49,10 @@ settings.configure(
     )
 )
 
-# router = routers.DefaultRouter()                      # add this
-#     router.register(r'todos', views.TodoView, 'todo')  
-
-# def compareBenchmarks(stock):
-#     if stock['return_vs_benchmark']
-#         return
-
-
 
 def index(request):
-    temp = json.loads(recommendations(request).content)['recs']
-    recs = temp
-    # sorted(temp, temp.key=['benchmark_return'])
-    # temp.sort()
-    # print(temp)
-    for item in temp :
-        # print(key , " :: " , temp[key])
-        print("NEW ITEM :: ", item['benchmark_return'])
-    
-    return render(request, 'index.html', {
-        'recommendations': recs,
-        'topRecommendations': recs
-    })
+    return render(request, 'index.html')
 
-# def home(request):
-#     response = requests.get('http://freegeoip.net/json/')
-#     geodata = response.json()
-#     return render(request, 'core/home.html', {
-#         'ip': geodata['ip'],
-#         'country': geodata['country_name']
-#     })
 
 
 def ecap_ajax(request):
