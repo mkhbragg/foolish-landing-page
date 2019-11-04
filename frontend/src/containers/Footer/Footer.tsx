@@ -25,7 +25,7 @@ class Footer extends Component<any, any> {
     render() {
         return (
             <footer className="Footer">
-                <p><a href="https://www.fool.com/PopUps/PrivacyInfo.htm" target="_blank">Privacy/Legal Information</a>.</p>
+                <p><a href="https://www.fool.com/PopUps/PrivacyInfo.htm" target="_blank" rel="noopener noreferrer">Privacy/Legal Information</a>.</p>
                 <p>
                     Past performance is not a predictor of future results.
                     Individual investment results may vary.
