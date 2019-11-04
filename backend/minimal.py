@@ -54,7 +54,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-
 def ecap_ajax(request):
     if request.POST.get('email'):
         sleep(1)
@@ -79,7 +78,7 @@ def recommendations(request):
 
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^$', index),
     url(r'add_to_campaign', ecap_ajax),
     url('disclosure', disclosure),
     url('recs', recommendations),
