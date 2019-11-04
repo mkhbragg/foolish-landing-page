@@ -6,7 +6,7 @@ import './Footer.scss';
 class Footer extends Component<any, any> {
     state = {
         disclosure: null,
-        today: new Date().getFullYear()
+        today: null
     }
 
     componentDidMount() {
@@ -14,12 +14,17 @@ class Footer extends Component<any, any> {
             .then((response: any) => {
                 this.setState({ disclosure: response.data.disclosure });
             });
+        this.setState({ today: new Date().getFullYear() });
     }
 
     htmlDecode = (input: any) => {
-        let e = document.createElement('div');
-        e.innerHTML = input;
-        return e.innerHTML;
+        if (input) {
+            let e = document.createElement('div');
+            e.innerHTML = input;
+            return e.innerHTML;
+        } else {
+            return '';
+        }
     }
 
     render() {
