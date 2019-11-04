@@ -8,6 +8,7 @@ from django.core.management import execute_from_command_line
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 import os
 import json
@@ -30,6 +31,16 @@ settings.configure(
     MEDIA_ROOT = PROJECT_PATH + '/media/',
     STATIC_ROOT = PROJECT_PATH + '/static/',
     STATIC_URL='/static/',
+    INSTALLED_APPS = [
+       'corsheaders'
+    ],
+    MIDDLEWARE = [
+        'corsheaders.middleware.CorsMiddleware'
+    ],
+    CORS_ORIGIN_WHITELIST = (
+        'http://localhost:3000',
+        'http://localhost:8000'
+    )
 )
 
 
@@ -56,6 +67,7 @@ def recommendations(request):
     with open(disclosure_api_file, "r") as f:
         disclosure_data = json.load(f)
     sleep(1.75)
+    # return JsonResponse(data=disclosure_data, safe=False)
     return JsonResponse(data=disclosure_data)
 
 

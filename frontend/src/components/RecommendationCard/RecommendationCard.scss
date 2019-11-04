@@ -1,0 +1,90 @@
+@import '../../assets/sass/theme.scss';
+
+.RecommendationCard:nth-child(4n + 1) .TopBar {
+    background-color: $motleyYellow;
+}
+
+.RecommendationCard:nth-child(4n + 2) .TopBar {
+    background-color: $motleyBlue;
+}
+
+.RecommendationCard:nth-child(4n + 3) .TopBar {
+    background-color: $motleyRed;
+}
+
+.RecommendationCard:nth-child(4n + 4) .TopBar {
+    background-color: $motleyPurple;
+}
+
+.RecommendationCard {
+    width: 20rem;
+    height: 11rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    font-family: "Helvetica Neue", sans-serif;
+
+    .FlexColumn {
+        display: flex;
+        flex-direction: column;
+    }         
+    
+    .FlexRow {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .Ticks {
+        justify-content: space-around;
+
+        .FlexColumn span {
+            &.TickType {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .TopBar {
+        height: 8px;
+        width: 100%;
+    }
+
+    .Symbol {
+        text-align: center;
+        border: 1px solid #ddd;
+        padding: 2px 4px;
+        color: #333;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .Company {
+        justify-content: center;
+
+        .Name, img {
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .Content {
+        position: relative;
+        border: 1px solid rgba(221, 221, 221, 0.8);
+        border-top: none;
+        padding: 1rem;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 2.5rem);
+    }
+
+    .Logo {
+        align-items: center;
+    }
+    
+    @include media ("<tablet") {
+        & {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}
