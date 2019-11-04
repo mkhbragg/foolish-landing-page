@@ -43,14 +43,16 @@ class SignUpButton extends Component<any, any> {
     }
 
     render() {
-        return (
-            <div className="SignUpButton">
-                <form onSubmit={ this.handleSubmit }>
-                    <input type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
-                    <input type="submit" value="Go" />
-                </form>
-            </div>
-        );
+        let form = this.state.error ? <p>Could not complete request.</p> :
+            (
+                <div className="SignUpButton">
+                    <form onSubmit={ this.handleSubmit }>
+                        <input type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
+                        <input type="submit" value="Go" />
+                    </form>
+                </div>
+            )
+        return form;
     }
 }
 
