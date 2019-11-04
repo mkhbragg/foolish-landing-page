@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import axios from '../../axios-tmf';
 import './Footer.scss';
+import Aux from '../../hoc/Aux/Aux';
 
 class Footer extends Component<any, any> {
     state = {
@@ -12,9 +13,8 @@ class Footer extends Component<any, any> {
     componentDidMount() {
         axios.get('/disclosure')
             .then((response: any) => {
-                this.setState({ disclosure: response.data.disclosure });
+                this.setState({ disclosure: response.data.disclosure, today: new Date().getFullYear() });
             });
-        this.setState({ today: new Date().getFullYear() });
     }
 
     htmlDecode = (input: any) => {
@@ -28,7 +28,7 @@ class Footer extends Component<any, any> {
     }
 
     render() {
-        return (
+        let footer = this.state.today && this.state.disclosure ?
             <footer className="Footer">
                 <p><a href="https://www.fool.com/PopUps/PrivacyInfo.htm" target="_blank" rel="noopener noreferrer">Privacy/Legal Information</a>.</p>
                 <p>
@@ -38,7 +38,9 @@ class Footer extends Component<any, any> {
                 </p>
                 { this.state.disclosure ? <div dangerouslySetInnerHTML={{ __html: this.htmlDecode(this.state.disclosure) }}></div> : null }
                 <p>&copy;1995-{this.state.today} The Motley Fool. All rights reserved. | <a href="https://www.fool.com/help/FoolMarks.htm" rel="noopener noreferrer" target="_blank">Legal Information</a></p>
-            </footer>
+            </footer> : <div></div>;
+        return (
+            <Aux>{ footer }</Aux>
         );
     }
 }

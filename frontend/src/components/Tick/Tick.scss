@@ -9,10 +9,10 @@
         border-right: 5px solid transparent;
         border-bottom: 5px solid $motleyGreen;
         margin-right: 0.5rem;
-      }
+        }
 }
   
-  .down {
+.down {
     color: $motleyRed;
     .arrow {
         width: 0; 
@@ -21,10 +21,20 @@
         border-right: 5px solid transparent;
         border-top: 5px solid $motleyRed;
         margin-right: 0.5rem;
-      }
+        }
 }
 
-.up, .down {
+.none {
+    color: #000;
+    .arrow {
+        width: 0.5rem; 
+        height: 0;
+        border-top: 5px solid #000;
+        margin-right: 0.5rem;
+        }
+}
+
+.up, .down, .none {
     display: flex;
     align-items: center;
 }
