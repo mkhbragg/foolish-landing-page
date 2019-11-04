@@ -37,12 +37,6 @@ settings.configure(
     MIDDLEWARE = [
         'corsheaders.middleware.CorsMiddleware'
     ],
-    # WEBPACK_LOADER = {
-    #     'DEFAULT': {
-    #         'BUNDLE_DIR_NAME': 'dist/',
-    #         'STATS_FILE': os.path.join(PROJECT_PATH, 'webpack-stats.json'),
-    #     }
-    # },
     CORS_ORIGIN_WHITELIST = (
         'http://localhost:3000',
         'http://localhost:8000'
