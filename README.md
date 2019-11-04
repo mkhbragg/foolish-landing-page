@@ -1,15 +1,18 @@
 ![alt text](https://g.foolcdn.com/misc-assets/black-fool-hat-text.svg "The Motley Fool Logo")
 
 # Submission Setup
-```cd backend```
-```pip install -r requirements.txt```
-```python minimal.py runserver```
+```
+cd backend
+pip install -r requirements.txt
+python minimal.py runserver
+```
 
 Then, navigate to the frontend directory:
-```cd ..```
-```cd frontend```
-```npm install```
-```npm start```
+```cd ..
+cd frontend
+npm install
+npm start
+```
 
 You should now be able to access the app from http://localhost:3000. Please see the README in /frontend for more information.
 
