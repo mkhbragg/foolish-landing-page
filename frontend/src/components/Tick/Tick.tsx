@@ -7,7 +7,7 @@ const tick = (props: any) => {
         <div className="Tick">
             <div className={props.amount >= 0 ? (props.amount === 0 ? 'none': 'up') : 'down' }>
                 <div className="arrow"></div>
-                <span>{ props.amount }%</span>
+                <span>{ props.amount.toLocaleString() }%</span>
             </div>
         </div>
     );
