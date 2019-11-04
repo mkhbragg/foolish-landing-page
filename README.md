@@ -16,6 +16,8 @@ npm start
 
 You should now be able to access the app from http://localhost:3000. Please see the README in /frontend for more information.
 
+Please note: In Chrome, CORS issues are present for fetched logo icons. This issue is not present in Firefox or Safari.
+
 # Marketing Front End Developer Test Project
 
 Hello potential Fool!  We’d love to give you the chance to show off your skills and impress us!  We want to see how you would create a landing page, how you communicate, and how you solve problems.  This is your chance to demonstrate skills beyond what we can see from your resume and from a talking-only interview.
