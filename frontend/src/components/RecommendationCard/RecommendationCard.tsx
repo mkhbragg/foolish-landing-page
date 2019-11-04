@@ -4,7 +4,7 @@ import axios from 'axios';
 import Tick from '../Tick/Tick';
 import './RecommendationCard.scss';
 
-const COLORS = ['#3F1B54', '#FFCC32', '#336699', '#CC3300', '#339932'];
+const COLORS = ['#3F1B54', '#FFCC32', '#336699', '#CC3300'];
 
 class RecommendationCard extends Component<any, any> {
     state = {
