@@ -4,8 +4,6 @@ import axios from 'axios';
 import Tick from '../Tick/Tick';
 import './RecommendationCard.scss';
 
-const COLORS = ['#3F1B54', '#FFCC32', '#336699', '#CC3300'];
-
 class RecommendationCard extends Component<any, any> {
     state = {
         imgSrc: `https://g.foolcdn.com/art/companylogos/mark/${this.props.recommendation.symbol}.png`,
@@ -20,7 +18,7 @@ class RecommendationCard extends Component<any, any> {
     render() {
         return (
             <div className="RecommendationCard">
-                <div className="TopBar" style={{ backgroundColor: COLORS[this.props.id%COLORS.length] }}></div>
+                <div className="TopBar"></div>
                 <div className="Content">
                     <div className="FlexRow Ticks">
                         <div className="FlexColumn">

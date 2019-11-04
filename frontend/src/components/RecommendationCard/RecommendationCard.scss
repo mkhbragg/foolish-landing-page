@@ -1,7 +1,23 @@
 @import '../../assets/sass/theme.scss';
 
+.RecommendationCard:nth-child(4n + 1) .TopBar {
+    background-color: $motleyYellow;
+}
+
+.RecommendationCard:nth-child(4n + 2) .TopBar {
+    background-color: $motleyBlue;
+}
+
+.RecommendationCard:nth-child(4n + 3) .TopBar {
+    background-color: $motleyRed;
+}
+
+.RecommendationCard:nth-child(4n + 4) .TopBar {
+    background-color: $motleyPurple;
+}
+
 .RecommendationCard {
-    width: 16rem;
+    width: 20rem;
     height: 10rem;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -32,7 +48,6 @@
     .TopBar {
         height: 8px;
         width: 100%;
-        background-color: $motleyYellow;
     }
 
     .Symbol {
@@ -68,7 +83,7 @@
         align-items: center;
     }
     
-    @include media ("<=phone") {
+    @include media ("<tablet") {
         & {
             width: 100%;
             margin-right: 0;

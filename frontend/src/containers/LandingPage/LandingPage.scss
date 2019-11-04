@@ -48,7 +48,7 @@
     }
 
     .ShowMore {
-        width: 16rem;
+        width: 20rem;
         height: 10rem;
         background-color: #fff;
         display: flex;
@@ -80,7 +80,7 @@
         }
     }
 
-    @include media ("<=tablet") {
+    @include media ("<tablet") {
         .PurpleChunk, .RecommendationCards, .List {
             padding: 2rem;
         }
@@ -88,15 +88,15 @@
         .List {
             flex-direction: column;
         }
+
+        .ShowMore {
+            width: 100%;
+        }
     }
 
     @include media ("<=phone") {
         .PurpleChunk, .RecommendationCards, .List {
             padding: 1rem;
-        }
-
-        .ShowMore {
-            width: 100%;
         }
     }
 }
