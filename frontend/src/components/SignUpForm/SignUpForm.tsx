@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import axios from '../../axios-tmf';
 import FoolTracker from '../../models/FoolTracker';
-import './SignUpButton.scss';
+import './SignUpForm.scss';
 
-class SignUpButton extends Component<any, any> {
+class SignUpForm extends Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -45,7 +45,7 @@ class SignUpButton extends Component<any, any> {
     render() {
         let form = this.state.error ? <p>Could not complete request.</p> :
             (
-                <div className="SignUpButton">
+                <div className="SignUpForm">
                     <form onSubmit={ this.handleSubmit }>
                         <input type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
                         <input type="submit" value="Go" />
@@ -56,4 +56,4 @@ class SignUpButton extends Component<any, any> {
     }
 }
 
-export default SignUpButton;
+export default SignUpForm;

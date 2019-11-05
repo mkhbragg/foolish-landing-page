@@ -6,7 +6,7 @@ import Recommendation from '../../models/Recommendation';
 import './LandingPage.scss';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Aux from '../../hoc/Aux/Aux';
-import SignUpButton from '../../components/SignUpButton/SignUpButton';
+import SignUpForm from '../../components/SignUpForm/SignUpForm';
 
 class LandingPage extends Component<any, any> {
 
@@ -75,7 +75,7 @@ class LandingPage extends Component<any, any> {
             <Aux>
                 <div className="Header">
                     <div className="Sprite"></div>
-                    <SignUpButton />
+                    <SignUpForm />
                 </div>
                 <div className="LandingPage">
                     <div className="PurpleChunk">
@@ -133,7 +133,7 @@ class LandingPage extends Component<any, any> {
                         Don't let that happen again. This is your chance to get in early.
                         I urge you to take action today and decide for yourself if you want to take advantage of this potentially once-in-a-generation buying opportunity. Simply enter your email address below to access our secure sign-up page.
                     
-                        <SignUpButton />
+                        <SignUpForm />
                     </div>
                 </div>
             </Aux>
