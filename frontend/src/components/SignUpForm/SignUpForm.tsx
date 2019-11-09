@@ -8,7 +8,9 @@ class SignUpForm extends Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            userEmail: ''
+            userEmail: '',
+            loading: false,
+            error: false
         }
     
         this.handleChange = this.handleChange.bind(this);
@@ -27,7 +29,7 @@ class SignUpForm extends Component<any, any> {
         let form = new FormData();
         form.append('email', this.state.userEmail);
         axios.post('/add_to_campaign', form)
-            .then(response => {
+            .then((response: any) => {
                 this.setState({ loading: false });
 
                 // log trackEvent() on FoolTracker
@@ -37,7 +39,7 @@ class SignUpForm extends Component<any, any> {
                 // go to campaign url
                 window.location.href = response.data.campaign_url;
             })
-            .catch( error => {
+            .catch((error: any) => {
                 this.setState({ loading: false, error: true });
             });
     }
@@ -47,8 +49,8 @@ class SignUpForm extends Component<any, any> {
             (
                 <div className="SignUpForm">
                     <form onSubmit={ this.handleSubmit }>
-                        <input type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
-                        <input type="submit" value="Go" />
+                        <input ref="signupInput" type="email" name="email" value={ this.state.userEmail } onChange={ this.handleChange } required placeholder="Email" aria-label="email" />
+                        <input ref="signupBtn" type="submit" value="Go" />
                     </form>
                 </div>
             )

@@ -9,7 +9,7 @@ import Aux from '../../hoc/Aux/Aux';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 
 class LandingPage extends Component<any, any> {
-
+    
     state = {
         canShowMore: true,
         topPerformingRecs: [],
@@ -67,8 +67,7 @@ class LandingPage extends Component<any, any> {
             topRecommendations = <Spinner />
         }
         if (this.state.error) {
-            topRecommendations = <p className="Centered">Unfortunately, the list of companies could not be loaded.</p>;
-
+            topRecommendations = <p className="Centered Error">Unfortunately, the list of companies could not be loaded.</p>;
         }
         
         return (
