@@ -1,22 +1,36 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ReactDOM, { unmountComponentAtNode } from 'react-dom';
+
 import Tick from './Tick';
 
-test('Tick class updates according to amount', () => {
-    let ticks;
+let container: any = null;
 
-    // Render a neutral tick
-    const neutralTick = shallow(<Tick amount={0} />);
-    ticks = neutralTick.find('.none');
-    expect(ticks.length).toEqual(1);
+beforeEach(() => {
+    // setup a DOM element as a render target
+    container = document.createElement('div');
+});
 
-    // Render a down tick
-    const downTick = shallow(<Tick amount={-40} />);
-    ticks = downTick.find('.down');
-    expect(ticks.length).toEqual(1);
+afterEach(() => {
+    // cleanup on exiting
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
+});
 
+it('should display uptick for amount > 0', () => {
     // Render an up tick
-    const upTick = shallow(<Tick amount={100} />);
-    ticks = upTick.find('.up');
-    expect(ticks.length).toEqual(1);
+    ReactDOM.render(<Tick amount={100} />, container);
+    expect(container.querySelectorAll('.up').length).toBe(1);
+});
+
+it('should display downtick for amount < 0', () => {
+    // Render a down tick
+    ReactDOM.render(<Tick amount={-40} />, container);
+    expect(container.querySelectorAll('.down').length).toBe(1);
+});
+
+it('should display neutral tick for amount === 0', () => {
+    // Render a neutral tick
+    ReactDOM.render(<Tick amount={0} />, container);
+    expect(container.querySelectorAll('.none').length).toBe(1);
 });
